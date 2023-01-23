@@ -62,6 +62,24 @@ int insert_node(Node *r, int value)
 	return 0;
 }
 
+bool is_left(Node *n)
+{
+	if (n->p == NULL)
+		return false;
+	if (n->p->l == n)
+		return true;
+	return false;
+}
+
+bool is_right(Node *n)
+{
+	if (n->p == NULL)
+		return false;
+	if (n->p->r == n)
+		return true;
+	return false;
+}
+
 void print_rb_rec(Node *r, int level)
 {
 	for (int i = 0; i < level; i++) {

@@ -12,10 +12,8 @@ int main(void)
 	Node *v1 = b_search(p_root, 15, &trobat);
 
 	if (trobat) {
-		printf("%d\n", v1->data);
+		printf("found %d in the tree\n", v1->data);
 	}
-
-	print_rb(p_root);
 
 	insert_node(p_root, 37);
 	insert_node(p_root, 108);
@@ -24,6 +22,11 @@ int main(void)
 	insert_node(p_root, 108);
 	
 	print_rb(p_root);
+
+	/* bool test_child_side = false; */
+	
+	if(is_right(p_root->r->r))
+		printf("root's right's right child : %d\n", p_root->r->r->data);
 
 	return 0;
 }
