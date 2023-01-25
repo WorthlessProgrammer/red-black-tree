@@ -28,5 +28,11 @@ int main(void)
 	if(is_right(p_root->r->r))
 		printf("root's right's right child : %d\n", p_root->r->r->data);
 
+	printf("Testing tree left rotation: \n");
+
+	rotate_tree(p_root->r);
+
+	print_rb(p_root);
+
 	return 0;
 }
