@@ -30,7 +30,7 @@ int main(void)
 
 	printf("Testing tree left rotation: \n");
 
-	rotate_tree(p_root->r);
+	rotate_tree_left(p_root->r->r);
 
 	print_rb(p_root);
 

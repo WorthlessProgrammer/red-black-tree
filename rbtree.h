@@ -27,7 +27,8 @@ int swap_color(Node *r);
 bool is_left(Node *n);
 bool is_right(Node *n);
 void swap_node_content(Node *n1, Node *n2);
-void rotate_tree(Node *n);
+void rotate_tree_left(Node *n);
+void rotate_tree_right(Node *n);
 void print_rb_rec(Node *r, int level);
 void print_rb(Node *r);
 

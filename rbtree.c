@@ -149,15 +149,8 @@ void swap_node_content(Node *n1, Node *n2)
 
 }
 
-void rotate_tree(Node *n)
+void rotate_tree_left(Node *n)
 {
-	/*
-	 *
-	 *        2         3
-	 *		1   3  -> 2   4 ->   
-	 *		     4   1		
-	 *		left rotation
-	 */
 	if (n == NULL)
 		return;
 	
@@ -175,11 +168,16 @@ void rotate_tree(Node *n)
 					node_grandParent->r = n;
 				}
 				n->p = node_grandParent;
-				node_parent->p = n;
 			} else {
 				swap_node_content(node_parent, n);
+				n->r = node_left; 
+				n->p = node_parent;
+				node_parent->l = n;
+				return;
 			}
-			node_parent->r = node_left;
+			node_parent->r = node_left; 
+			node_parent->p = n;
+			n->l = node_parent;
 		} else {
 			if (node_right) {
 				node_parent->l = node_right;
